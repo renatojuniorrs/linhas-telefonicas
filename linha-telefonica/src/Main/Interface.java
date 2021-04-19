@@ -1,22 +1,34 @@
 package Main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.SwingWorker;
+import javax.swing.text.Document;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author RGrupos
  */
 public class Interface extends javax.swing.JFrame {
-
+    private DefaultListModel lista = new DefaultListModel();
     /**
      * Creates new form Interface
      */
-    public Interface() {
+    public Interface() throws Exception {
         initComponents();
+
+        List list = new List<Integer>();
+        list.push(1);
+        list.push(2);
+        list.push(3);
+        list.push(4);
+        list.display();
     }
 
     /**
@@ -40,18 +52,18 @@ public class Interface extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "a", "a", "a", "a", "a" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Receber Ligações");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton1");
+        jButton2.setText("Atender");
 
-        jButton3.setText("jButton1");
+        jButton3.setText("Simulador Automático");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,6 +108,30 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println("1.OK?");
+        lista.addElement("3");
+        jList1.setModel(lista);
+        
+        SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
+            public Boolean doInBackground() {
+                return true;
+            }
+
+            @Override
+            public void done() {
+                try{
+                    Thread.sleep(5000);    
+                }catch(Exception ex) {}
+//                this.jList1.add(2);
+                System.out.println("2.OK?");
+            }
+        };
+
+        // Call the SwingWorker from within the Swing thread
+        worker.execute();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -126,7 +162,10 @@ public class Interface extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interface().setVisible(true);
+                try {
+                    new Interface().setVisible(true);
+                } catch (Exception ex) {
+                }
             }
         });
     }
