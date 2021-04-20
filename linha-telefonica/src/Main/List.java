@@ -39,12 +39,12 @@ public class List<T> {
         }
     }
  
-    public void pop(){
-        if (top == null) {
-            System.out.print("\nStack Underflow");
-            return;
-        }
+    public T pop() throws Exception{
+        T data = (T)top.getData();
+        if (top == null)
+            throw new Exception("No items");
         top = (top).getNext();
+        return data;
     }
  
     public void display(){

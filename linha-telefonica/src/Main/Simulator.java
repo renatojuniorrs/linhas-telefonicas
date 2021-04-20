@@ -12,11 +12,11 @@ import java.util.Random;
  * @author RGrupos
  */
 public class Simulator {
-    public void makeRandomPhoneCalls(List<String> x){
+    public void makeRandomPhoneCalls(List<Phone> x){
         int numberOfPhonesToMake = random(1, 10);
         for(int i = 0; i < numberOfPhonesToMake; i++){
             String phone = createsNumber();
-            x.push(phone);
+            x.push(new Phone(phone));
         }
     }
     public int random(int low, int high){

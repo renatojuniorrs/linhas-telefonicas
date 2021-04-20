@@ -18,13 +18,15 @@ import javax.swing.text.Document;
 public class Interface extends javax.swing.JFrame {
     private DefaultListModel orderedList = new DefaultListModel();
     private List stack;
+    private List orderedStack;
     /**
      * Creates new form Interface
      */
     public Interface() throws Exception {
         initComponents();
 
-        stack = new List<String>();
+        stack = new List<Phone>();
+        orderedStack = new List<Phone>();
     }
 
     /**
@@ -58,8 +60,18 @@ public class Interface extends javax.swing.JFrame {
         });
 
         jButton2.setText("Atender");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Simulador Automático");
+        jButton3.setText("Atualizar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,8 +120,33 @@ public class Interface extends javax.swing.JFrame {
 
         Simulator s = new Simulator();
         s.makeRandomPhoneCalls(this.getStack());
-        stack.display();
+        
+        try {
+            organizeElements();
+            displayOrder();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            organizeElements();
+            displayOrder();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            orderedStack.pop();
+            organizeElements();
+            displayOrder();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +184,65 @@ public class Interface extends javax.swing.JFrame {
                 }
             }
         });
+    }
+    
+    public void organizeElements() throws Exception{
+        List auxStack = new List<Phone>();
+        while(!orderedStack.isEmpty()){
+            auxStack.push(orderedStack.pop());
+        }
+        while(!stack.isEmpty()){
+            auxStack.push(stack.pop());
+        }
+        Phone cheaper = null;
+        int index = 0;
+        while(!auxStack.isEmpty()){
+            List aux2Stack = new List<Phone>();
+            if(index == 0){
+                cheaper = (Phone)auxStack.pop();
+                if(auxStack.isEmpty())
+                    orderedStack.push(cheaper);
+                index++;
+            }else{
+                while(!auxStack.isEmpty()){
+                    Phone p = (Phone)auxStack.pop();
+                    double auxCost = Math.round(p.getCost() * 100);
+                    double cheaperCost = Math.round(cheaper.getCost() * 100);
+                    if(cheaperCost - auxCost > 0){
+                        aux2Stack.push(cheaper);
+                        cheaper = p;
+                    }else{
+                        aux2Stack.push(p);
+                    }
+                }
+                auxStack = aux2Stack;
+                index = 0;
+                orderedStack.push(cheaper);
+            }
+        }
+        orderedStack.display();
+        
+    }
+    
+    public void displayOrder() throws Exception{
+        orderedList.clear();
+        try{
+            List auxStack = new List<Phone>();
+            while(!orderedStack.isEmpty()){
+                Phone p = (Phone)orderedStack.pop();
+                auxStack.push(p);
+                Double cost = p.getCost();
+                Integer convert = (int) Math.round(cost * 100);
+                cost = Double.parseDouble(convert.toString())/100;
+                orderedList.addElement(p.getFormatedPhone()+" | Custo "+cost.toString());
+            }
+            this.jList1.setModel(orderedList);
+            while(!auxStack.isEmpty()){
+                orderedStack.push(auxStack.pop());
+            }
+        }catch(Exception ex){
+            System.err.println(ex);
+        }
     }
     
     public List getStack(){
