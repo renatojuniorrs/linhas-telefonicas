@@ -27,8 +27,9 @@ public class Phone {
         }catch(Exception ex){}
     }
     
+    // função que calcula o custo da ligação a partir da distância.
     public double getCost(){
-        // Considerando R$1,05 por minuto por KM https://canaltech.com.br/telecom/Ligacoes-entre-celulares-ficarao-50-mais-baratas-em-2016/
+        // Considerando R$1,05 por minuto por KM 
         double costPerKMPerMin = 0.00031992687;
         // Tempo de espera no telefone
         double waiting = new Date().getTime()/1000;

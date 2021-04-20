@@ -9,6 +9,12 @@ package Main;
  *
  * @author RGrupos
  */
+
+/* 
+ Classe que declaramos os DDDs com suas devidas latitudes e longitudes, assim 
+ quando usado na fórmula que calculará a distância pegará a partir dessa classe
+ se o DDD for válido dentro do território.   
+*/
 public class DDD {
 
     private int[] result = {

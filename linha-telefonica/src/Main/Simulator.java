@@ -11,6 +11,11 @@ import java.util.Random;
  *
  * @author RGrupos
  */
+
+/* 
+   Classe que irá simular as chamadas telefônicas, criando números 
+   e colocando-os dentro de uma lista.
+*/
 public class Simulator {
     public void makeRandomPhoneCalls(List<Phone> x){
         int numberOfPhonesToMake = random(1, 10);
@@ -19,12 +24,14 @@ public class Simulator {
             x.push(new Phone(phone));
         }
     }
+    
     public int random(int low, int high){
         Random r = new Random();
         int result = r.nextInt(high-low) + low;
         return result;
     }
     
+    // função que cria um número aleátorio.
     public String createsNumber(){
         DDD ddd = new DDD();
         int[] DDDs = ddd.getDDDs();

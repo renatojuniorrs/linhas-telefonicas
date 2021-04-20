@@ -116,6 +116,7 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // botão que simula o recebimento de ligções.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         Simulator s = new Simulator();
@@ -129,6 +130,7 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    // botão que atualiza a lista.
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
             organizeElements();
@@ -138,6 +140,7 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    // botão que atende as ligações.
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             orderedStack.pop();
@@ -186,6 +189,7 @@ public class Interface extends javax.swing.JFrame {
         });
     }
     
+    // função que organiza os elementos da partir do seu custo.
     public void organizeElements() throws Exception{
         List auxStack = new List<Phone>();
         while(!orderedStack.isEmpty()){
@@ -224,6 +228,7 @@ public class Interface extends javax.swing.JFrame {
         
     }
     
+    // função que se estiver elementos, ela irá printar no display, em ordem. 
     public void displayOrder() throws Exception{
         orderedList.clear();
         try{

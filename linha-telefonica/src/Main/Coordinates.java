@@ -9,6 +9,8 @@ package Main;
  *
  * @author RGrupos
  */
+
+// classe pública que declara a latitude e longitude.
 public class Coordinates {
     private static final int EARTH_RADIUS = 6371; // Approx Earth radius in KM
     public double lat;
@@ -19,6 +21,10 @@ public class Coordinates {
         this.lon = lon;
     }
     
+    /* 
+     Classe que pega os dados de latitude e longitude e primeiro calcula
+     fórmula de haversin e depois calcula a distância dos dois pontos.
+    */
     public double distance(Coordinates x){
         double startLat = this.lat;
         double startLong = this.lon;

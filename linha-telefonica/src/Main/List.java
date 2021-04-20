@@ -12,7 +12,7 @@ public class List<T> {
     List(){
         this.top = null;
     }
- 
+  
     public void push(T x) {
         Node temp = new Node<T>();
  
@@ -47,6 +47,10 @@ public class List<T> {
         return data;
     }
  
+    /* 
+     Função que verifica primeiro se existe algum número na lista e se tiver
+     ele irá mandar para o display do programa.
+    */
     public void display(){
         if (top == null) {
             return;
