@@ -15,7 +15,7 @@ public class DDD {
             
             //DDDs
             dddGeo[11] = new Coordinates(-23.547778,-46.635833);
-            dddGeo[11] = new Coordinates(-23.203416,-45.890627);
+            dddGeo[12] = new Coordinates(-23.203416,-45.890627);
 
 //	}; // | São Paulo | São José dos Campos e Região.
 //	dddGeo[13] = {
