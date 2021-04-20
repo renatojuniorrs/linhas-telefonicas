@@ -16,19 +16,15 @@ import javax.swing.text.Document;
  * @author RGrupos
  */
 public class Interface extends javax.swing.JFrame {
-    private DefaultListModel lista = new DefaultListModel();
+    private DefaultListModel orderedList = new DefaultListModel();
+    private List stack;
     /**
      * Creates new form Interface
      */
     public Interface() throws Exception {
         initComponents();
 
-        List list = new List<Integer>();
-        list.push(1);
-        list.push(2);
-        list.push(3);
-        list.push(4);
-        list.display();
+        stack = new List<String>();
     }
 
     /**
@@ -109,27 +105,10 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("1.OK?");
-        lista.addElement("3");
-        jList1.setModel(lista);
-        
-        SwingWorker<Boolean, Void> worker = new SwingWorker<Boolean, Void>() {
-            public Boolean doInBackground() {
-                return true;
-            }
 
-            @Override
-            public void done() {
-                try{
-                    Thread.sleep(5000);    
-                }catch(Exception ex) {}
-//                this.jList1.add(2);
-                System.out.println("2.OK?");
-            }
-        };
-
-        // Call the SwingWorker from within the Swing thread
-        worker.execute();
+        Simulator s = new Simulator();
+        s.makeRandomPhoneCalls(this.getStack());
+        stack.display();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -168,6 +147,10 @@ public class Interface extends javax.swing.JFrame {
                 }
             }
         });
+    }
+    
+    public List getStack(){
+        return stack;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

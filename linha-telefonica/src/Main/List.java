@@ -14,7 +14,7 @@ public class List<T> {
     }
  
     public void push(T x) {
-        Node temp = new Node();
+        Node temp = new Node<T>();
  
         if (temp == null) {
             System.out.print("\nHeap Overflow");
@@ -54,7 +54,7 @@ public class List<T> {
         else {
             Node temp = top;
             while (temp != null) {
-                System.out.printf("%d->", temp.getData());
+                System.out.print(temp.getData()+"->");
                 temp = temp.getNext();
             }
         }
