@@ -117,7 +117,7 @@ CF = 0; // Valor da ligação do DDD 19 seria sempre R$ 0,00 independente do tem
 
 
 
-## Bibliografia:
+## Bibliografia
 
 - **Fórmula de Haversine**
 
