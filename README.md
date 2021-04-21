@@ -20,7 +20,8 @@ D; //Distância em KM até o DDD 19
 CF; // Custo final
 T; // Tempo de espera da ligação em Minutos
 
-CF = ([D * C] + 0,01) * T; 
+CF = { ([D * C] + 0,01) * T } + (C * D); 
+
 
 ```
 
@@ -34,10 +35,9 @@ D = 0; //Distância em KM até o DDD 19
 CF; // Custo final
 T = 10; // Tempo de espera da ligação em Minutos
 
-CF = ([D * C]) * T;  // Se não tivesse taxa fixa
-CF  = 0 * 0,00031992687 * 10;
+CF = {([D * C]) * T} + (C * D);  // Se não tivesse taxa fixa
+CF  = 0 * 0,00031992687 * 10 + 0;
 CF = 0; // Valor da ligação do DDD 19 seria sempre R$ 0,00 independente do tempo esperando ser atendido
-
 
 ```
 - O programa tem uma função que simula o atendimento e recebimento de ligações.
