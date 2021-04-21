@@ -1,4 +1,4 @@
-﻿**Resumo:**
+# Resumo
 
 - A partir de quanto maior a distância entre o DDD(19) da central e o DDD que está ligando à central, bem como maior o tempo de espera na linha, maior deve-se a prioridade de atendimento, **evitando assim custos desnecessários**.
 - Nós pegamos todas as coordenadas geográficas (Latitude e Longitude) aproximadas dos DDDs e calculamos a distância entre a coordenada geográfica do número que está ligando até a coordenada geográfica do DDD 19. Para fazer esse cálculo usamos a **fórmula de haversine**, que é uma importante equação usada para navegações,a partir da latitude e longitude dos dois pontos calculando a distância entre eles. Assim podemos calcular a distância com a seguinte fórmula: 
@@ -26,7 +26,7 @@
 ![](Aspose.Words.b103e81a-bdfa-4306-814c-5a7321fa44ec.002.png)
 
 
-##Documentação
+## Documentação
 
 
 |Classe Coordinates |  |  |
@@ -93,7 +93,7 @@
 
 
 
-##Bibliografia:
+## Bibliografia:
 
 - **Fórmula de Haversine**
 
