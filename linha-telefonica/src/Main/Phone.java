@@ -39,7 +39,7 @@ public class Phone {
         // Distancia da ligação do DDD 19
         double distantce = coordinate.distance(ddd.getCoordinate(19));
         // Custo total da ligação
-        double cost = ((costPerKMPerMin * distantce + 0.01) * waiting) + (costPerKMPerMin * distantce);
+        double cost = ((costPerKMPerMin * distantce + 0.01) * waiting);
         
         return cost;
     }
