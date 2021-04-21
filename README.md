@@ -8,14 +8,32 @@
 - Fizemos uma pesquisa e identificamos que o maior custo de ligação por minuto é de R$ 1,05. Pegamos a distância entre Roraima e Campinas em KM e chegamos a um valor de : R$ 0,00031992687 por minuto de ligação por KM.
 - Assim elaboramos a fórmula do custo de ligação:
 
+```
+C = 0,00031992687; // Custo por Minuto por KM
+D; //Distância em KM até o DDD 19
+CF; // Custo final
+T; // Tempo de espera da ligação em Minutos
 
-|<p>C = 0,00031992687; // Custo por Minuto por KM</p><p>D; //Distância em KM até o DDD 19</p><p>CF; // Custo final</p><p>T; // Tempo de espera da ligação em Minutos</p><p></p><p>CF = ([D \* C] + 0,01) \* T; </p>|
-| - |
+CF = ([D * C] + 0,01) * T; 
+
+```
+
 
 - Foi adicionado uma taxa fixa de R$ 0,01 para compensar as ligações realizadas do DDD 19. Veja exemplo caso não tivéssemos a taxa fixa:
 
-|<p>C = 0,00031992687; // Custo por Minuto por KM</p><p>D = 0; //Distância em KM até o DDD 19</p><p>CF; // Custo final</p><p>T = 10; // Tempo de espera da ligação em Minutos</p><p></p><p>CF = ([D \* C]) \* T;  // Se não tivesse taxa fixa</p><p>CF  = 0 \* 0,00031992687 \* 10;</p><p>**CF = 0; // Valor da ligação do DDD 19 seria sempre R$ 0,00 independente do tempo esperando ser atendido**</p>|
-| - |
+
+```
+C = 0,00031992687; // Custo por Minuto por KM
+D = 0; //Distância em KM até o DDD 19
+CF; // Custo final
+T = 10; // Tempo de espera da ligação em Minutos
+
+CF = ([D * C]) * T;  // Se não tivesse taxa fixa
+CF  = 0 * 0,00031992687 * 10;
+CF = 0; // Valor da ligação do DDD 19 seria sempre R$ 0,00 independente do tempo esperando ser atendido
+
+
+```
 - O programa tem uma função que simula o atendimento e recebimento de ligações.
 - Detalhes da Interface:
   - **Botão Atende**r: Esse botão irá atender a primeira chamada da lista(que têm maior prioridade).
