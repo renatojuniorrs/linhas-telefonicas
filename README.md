@@ -1,3 +1,9 @@
+# Repositório Estrutura de Dados PUC Campinas
+
+Desenvolvido por Renato Donizeti da Silva Junior
+Desenvolvido por Guilherme Araujo Alexandre
+Desenvolvido por Lucas Ament.
+
 # Resumo
 
 - A partir de quanto maior a distância entre o DDD(19) da central e o DDD que está ligando à central, bem como maior o tempo de espera na linha, maior deve-se a prioridade de atendimento, **evitando assim custos desnecessários**.
