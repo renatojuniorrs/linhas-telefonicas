@@ -26,50 +26,16 @@
 ![](Aspose.Words.b103e81a-bdfa-4306-814c-5a7321fa44ec.002.png)
 
 
+##Documentação
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Documentação**
-
-
-|Classe Coordinates|
-| :-: |
+|Classe Coordinates | | |
 |Método|Coordinates(double lat, double long) |Inicializa a classe Coordenadas, atribuindo uma Latitude e uma Longitude|
 |Método|distance(Coordinates x)|Retorna a distância em KM entre duas coordenadas geográficas|
 |Método|haversin(double val)|Retorna o resultado da fórmula de haversine|
 
 
-|Classe Interface|
-| :-: |
+|Classe Interface | | |
 |Método|Interface()|Inicializa os elementos da interface gráfica e as variáveis necessárias|
 |Método|initComponents()|Inicializa os elementos da interface gráfica (Método gerada pelo NetBeans)|
 |Método|jButton1ActionPerformed()|Ação de clique do botão 1. Botão que simula o recebimento de ligações|
@@ -81,16 +47,14 @@
 |Método|getStack()|Classe que retorna a pilha de itens que ainda não foram ordenados.|
 
 
-|Classe DDD |
-| :-: |
+|Classe DDD | | |
 |Método|DDD|Inicializa a classe DDD com definindo os DDDs possíveis|
 |Método|getCoordinate()|Retorna as coordenadas para cada um dos DDDs existentes.|
 |Método|available(Int ddd)|Retorna se o DDD é válido|
 |Método|getDDDs()|Retorna todos os DDDs válidos|
 
 
-|Classe List|
-| :-: |
+|Classe List | | |
 |Método|List<T>|Cria uma Pilha de lista encadeada|
 |Método|push()|Insere um novo valor a Pilha |
 |Método|isEmpty()|Verifica se não existe elementos na Lista|
@@ -99,24 +63,21 @@
 |Método|display()|Imprime no console todos os elementos da Pilha.|
 
 
-|Classe Node|
-| :-: |
+|Classe Node | | |
 |Método|setData()|Define um dado para o elemento|
 |Método|getData()|Retorna os dados do elemento|
 |Método|getNext()|Retorna o elemento seguinte |
 |Método|setNext()|Define o próximo elemento|
 
 
-|Classe Phone|
-| :-: |
+|Classe Phone | | |
 |Método|getCost()|Retorna o custo da ligação telefônica.|
 |Método|getFormatedPhone()|Retorna o número do celular|
 |Método|getDDD()|Retorna o DDD do celular|
 |Método|toString()|Converte elementos para string|
 
 
-|Classe Simulator|
-| :-: |
+|Classe Simulator | | |
 |Método|makeRandomPhoneCalls()|Cria chamadas telefônicas aleatórias|
 |Método|random()|Gera números inteiros aleatórios|
 |Método|createsNumber()|Cria um número de celular de forma aleatória|
@@ -125,7 +86,7 @@
 
 
 
-**Bibliografia:**
+##Bibliografia:
 
 - **Fórmula de Haversine**
 
